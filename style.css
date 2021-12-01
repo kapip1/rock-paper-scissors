@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background: #1f3756;
+}
+
+.game__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.game__header {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 50px;
+}
+.game__panel {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transform: scale(1);
+    border: 3px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+    
+}
+.game__title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 35px;
+    width: 40px;
+    text-transform: uppercase;
+}
+.game__score {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 10px 35px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.score__title {
+    color: hsl(229, 64%, 46%);
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.score__number {
+    color: hsl(229, 25%, 31%);
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.game__main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+}
+.game__lobby {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+.hand__container {
+    position: relative;
+    width: 90%;
+    max-width: 350px;
+    height: 250px;
+    background: url(./images/bg-triangle.svg);
+    background-size: cover;
+}
+.hand__paper, .hand__scissors, .hand__rock {
+    position: absolute;
+    border: 5px solid blue;
+    padding: 90px;
+    cursor: pointer;
+    background: no-repeat center #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hand__paper {
+    left: 0;
+    border: 5px solid blue;
+
+    background-image: url(./images/icon-paper.svg);
+}
+.hand__scissors {
+    left: 100%;
+    border: 5px solid yellow;
+    background-image: url(./images/icon-scissors.svg);
+}
+.hand__rock {
+    border: 5px solid red;
+    left: 50%;
+    top: 100%;
+    background-image: url(./images/icon-rock.svg);
+}
+
+
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+.rules__button {
+    position: fixed;
+    z-index: 100;
+    right: 5%;
+    bottom: 5%;
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+.game__arena {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+.player__hand, .computer__hand {
+    width: 150px;
+    height: 150px;
+    background: no-repeat #fff center;
+    border-radius: 50%;
+
+}
+.computer__hand {
+    background-color: grey;
+    opacity: 0.2;
+}
+.computer__title, .player__title {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+}
+.computer__container, .player__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
+
+
+.paper {
+    background-image: url(./images/icon-paper.svg);
+    border: 6px solid blue;
+    opacity: 1;
+    background-color: white;
+}
+.scissors {
+    background-image: url(./images/icon-scissors.svg);
+    opacity: 1;
+    border: 6px solid yellow;
+    background-color: white;
+
+}
+.rock {
+    background-image: url(./images/icon-rock.svg);
+    opacity: 1;
+    border: 6px solid red;
+    background-color: white;
+
+}
+.result__container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.result__title {
+    text-transform: uppercase;
+    color: white;
+    font-size: 36px;
+}
+.result__button {
+    padding: 12.5px 30px;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    background-color: #fff;
+    color: #1f3756;
+    border-radius: 8px;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+.modal__container {
+    opacity: 1;
+    width: 320px;
+    height: 380px;
+    background: #fff;
+    position: absolute;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 8px;
+    
+}
+.modal__header {
+    display: flex;
+    color: #1f3756;
+    font-size: 26px;
+    font-weight: 700;
+    justify-content: space-between;
+}
+.modal__button--close {
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    background: url(./images/icon-close.svg) center no-repeat;
+}
+.modal__image {
+    width: 100%;
+    height: 90%;
+    background: url(./images/image-rules.svg) bottom no-repeat;
+    background-size: contain;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 756px) {
+    .game__title {
+        font-size: 28px;
+        line-height: 28px;
+        
+    }
+    .game__score {
+        padding: 5px 20px;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    .score__title {
+       
+        font-size: 23px;
+    }
+    .score__number {
+        font-size: 38px;
+    }
+    .hand__container {
+        position: relative;
+        width: 70%;
+        max-width: 250px;
+        height: 200px;
+        background: url(./images/bg-triangle.svg)  no-repeat center;
+        background-size: contain;
+
+    }
+    .game__arena {
+        flex-direction: column;
+        justify-content: stretch;
+        margin: 0;
+    }
+    .hand__paper, .hand__scissors, .hand__rock {
+        
+        padding: 40px;
+       
+    }
+    
+
+}
+
+
